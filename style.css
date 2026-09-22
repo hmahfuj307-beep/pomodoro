@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f172a;
+  background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Add Flexbox to your container div */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers h1, img, and button vertically */
+  gap: 1.25rem;       /* Adds clean spacing between elements */
+  text-align: center;
+}
+
+img {
+  max-height: 15rem;
+  border-radius: 0.75rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
