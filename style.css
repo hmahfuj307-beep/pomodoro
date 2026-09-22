@@ -16,12 +16,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Add Flexbox to your container div */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers h1, img, and button vertically */
-  gap: 1.25rem;       /* Adds clean spacing between elements */
+  align-items: center;
+  gap: 1.25rem;       
   text-align: center;
 }
 
