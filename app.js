@@ -1,5 +1,6 @@
 let timerId = null;
-let button = document.querySelector("button");
+let button = document.querySelector("#start-btn"); 
+let changeBackg = document.querySelector("#one");
 let timeLeft = 25 * 60;
 
 function pomodoro() {
@@ -11,9 +12,13 @@ function pomodoro() {
         let mm = String(minutLeft).padStart(2, '0');
         let ss = String(secondLeft).padStart(2, '0');
 
-        button.innerHTML = `<input type="text" value="${mm}:${ss}">`;
-    }
-    else {
+        let input = button.querySelector("input");
+        if (input) {
+            input.value = `${mm}:${ss}`;
+        } else {
+            button.innerHTML = `<input type="text" value="${mm}:${ss}">`;
+        }
+    } else {
         clearInterval(timerId);
         timerId = null;
     }
@@ -22,5 +27,16 @@ function pomodoro() {
 button.addEventListener("click", () => {
     if (!timerId) {
         timerId = setInterval(pomodoro, 1000);
+    } else {
+        clearInterval(timerId);
+        timerId = null;
     }
 });
+
+function chbg() {
+    document.body.style.backgroundImage = "none";
+    
+    document.body.style.backgroundColor = "red";
+}
+
+changeBackg.addEventListener("click", chbg);
