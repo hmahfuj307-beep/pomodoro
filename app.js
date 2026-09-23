@@ -26,6 +26,7 @@ function pomodoro() {
 
 button.addEventListener("click", () => {
     if (!timerId) {
+        pomodoro();
         timerId = setInterval(pomodoro, 1000);
     } else {
         clearInterval(timerId);
@@ -35,8 +36,10 @@ button.addEventListener("click", () => {
 
 function chbg() {
     document.body.style.backgroundImage = "none";
-    
-    document.body.style.backgroundColor = "red";
+    const hex=Math.floor(Math.random()*16777215).toString(16);
+    return `#${hex.padStart(6,"0")}`;
 }
 
-changeBackg.addEventListener("click", chbg);
+changeBackg.addEventListener("click", ()=>{
+    document.body.style.backgroundColor=chbg();
+});
